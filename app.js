@@ -92,12 +92,12 @@ existing starter Pokemon will be *replaced* in your party with the Pokemon it ev
 Solve Exercise 7 here:
 */
 
-game.party.splice(1, 2, 'Ivysaur');
-game.party.splice(4, 5, 'Charmeleon');
-game.party.splice(7, 8, 'Wartortle');
-game.party.splice(25, 26, 'Raichu')
+game.party.splice(0, 1, pokemon[1]);
+game.party.splice(3, 4, pokemon[4]);
+game.party.splice(6, 7, pokemon[7]);
+game.party.splice(25, 24, pokemon[25]);
+console.log(game.party);
 
-console.log(game.party)
 
 /*
 Exercise 8
@@ -107,11 +107,14 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-function printPokemonNames(party) {
-    party.forEach(pokemon => {
-        console.log(pokemon.name);
-    });
+const printName = function() {
+game.party.forEach(pokemon => {
+  console.log(pokemon.name);
+});
 }
+printName()
+console.log(game.party);
+
 
 /*
 Exercise 9
@@ -122,9 +125,8 @@ Exercise 9
 Solve Exercise 9 here:
 */
 
-game.party.forEach(pokemon => {
-    console.log(pokemon);
-});
+
+ 
 
 /*
 Exercise 10
@@ -138,11 +140,8 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 Solve Exercise 10 here:
 */
 
- catchPokemon = function () {
-const pokemonObj = 
-document.querySelector("game");
- game.party.push(pokemonObj);
-
+const catchPokemon = function(pokemonObj) {
+  game.party.push(pokemonObj);
 }
 
 console.log(game.party)
@@ -203,7 +202,7 @@ Solve Exercise 13 here:
 */
 
 
- gymStatus = Function () 
+ gymStatus = function () {
     const gymTally = {completed: 0, incomplate: 0};
     gymStatus(gym => {
         if (gym.completed) {
@@ -212,6 +211,4 @@ Solve Exercise 13 here:
             gymTally.incomplate += 1;
         }
     })
-
-
-console.log(gymTally);
+  }
