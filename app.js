@@ -124,9 +124,13 @@ Exercise 9
 
 Solve Exercise 9 here:
 */
+pokemon.forEach(pokemon => {
+  if (pokemon.starter) {
+    console.log(pokemon.name);
+  }
+});
 
-
- 
+console.log(game.party);
 
 /*
 Exercise 10
@@ -158,7 +162,21 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 
 Solve Exercise 11 here:
 */
+catchPokemon(pokemon)
+  const pokeball = game.items.find(item => item.name === 'pokeball');
+  
+  if (pokeball && pokeball.quantity > 0) {
+      pokeball.quantity--;
+      game.party.push(pokemon);
+      console.log(`${pokemon.name} was caught!`);
+  } else {
+      console.log(`No pokeballs left!`);
+  }
 
+
+const pokemonToCatch = pokemon[0]; 
+
+console.log(game.items);
 
 /*
 Exercise 12
@@ -212,3 +230,48 @@ Solve Exercise 13 here:
         }
     })
   }
+
+  /*
+Exercise 14
+1. Add a `partyCount` method to `game` that counts the number of Pokémon in your party.
+
+This method should:
+  - Not accept any arguments.
+  - Count the number of Pokemon in the party.
+  - return the found number of Pokemon in the party.
+
+Solve Exercise 14 here:
+*/
+
+partyCount = function() {
+  return game.party.length;
+}
+
+console.log(game.party);
+
+
+/*
+Exercise 15
+1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
+(change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 15 here:
+*/
+
+game.gyms.forEach(gym => {
+  if (gym.difficulty < 8) {
+    gym.completed = true;
+  }
+});
+
+console.log(game.gyms);
+
+/*
+Exercise 16
+1. Log the entire `game` object to the console. Take a moment to review the changes you've made throughout the exercises.
+
+
+Solve Exercise 16 here:
+*/
+
+console.log(game);
